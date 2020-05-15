@@ -115,9 +115,6 @@
             <div class="form-group">
               <label for="">Konfirmasi Ulang Password : <span class="text-danger">*</span></label>
               <input type="password" name="password_confirmation" id="password_confirmation" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid':'' }}" placeholder="Tulis Ulang Password..." required>
-              <span class="text-danger">
-                {{ $errors->first('password') }}
-              </span>
             </div>
           </div>
           <div class="form-group col-12">
@@ -166,6 +163,7 @@
       endDate: '0d',
       todayHighlight: true,
       disableTouchKeyboard: true,
+      orientation: 'auto bottom',
     });
 
     $('#photo').on('change', function() {

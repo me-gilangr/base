@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="col-12">
-  <div class="card card-primary card-outline">
+  <div class="card card-warning card-outline">
     <div class="card-header"> 
       <h5 class="card-title m-0"> <i class="fa fa-edit"></i> &ensp; Form Edit Data User</h5>
       <div class="card-tools">
@@ -111,14 +111,14 @@
           <div class="col-md-6 col-lg-6">
             <div class="form-group">
               <label for="">Ganti E-Mail : </label>
-              <input type="email" name="email" id="email" class="form-control {{ $errors->has('email') ? 'is-invalid':'' }}"  placeholder="Masukan E-Mail Baru..." required>
+              <input type="email" name="email" id="email" class="form-control {{ $errors->has('email') ? 'is-invalid':'' }}"  placeholder="Masukan E-Mail Baru...">
               <span class="text-danger">
                 {{ $errors->first('email') }}
               </span>
             </div>
             <div class="form-group">
               <label for="">Konfirmasi E-Mail : </label>
-              <input type="email" name="email_confirmation" id="email_confirmation" class="form-control {{ $errors->has('email_confirmation') ? 'is-invalid':'' }}" placeholder="Silahkan Tulis Ulang E-Mail..." required>
+              <input type="email" name="email_confirmation" id="email_confirmation" class="form-control {{ $errors->has('email_confirmation') ? 'is-invalid':'' }}" placeholder="Silahkan Tulis Ulang E-Mail...">
               <span class="text-danger">
                 {{ $errors->first('email_confirmation') }}
               </span>
@@ -126,18 +126,15 @@
           </div>
           <div class="col-md-6 col-lg-6"> 
             <div class="form-group">
-              <label for="">Ubah Password : <span class="text-danger">*</span></label>
-              <input type="password" name="password" id="password" class="form-control {{ $errors->has('password') ? 'is-invalid':'' }}" placeholder="Masukan Password..." required>
+              <label for="">Ubah Password : </label>
+              <input type="password" name="password" id="password" class="form-control {{ $errors->has('password') ? 'is-invalid':'' }}" placeholder="Masukan Password...">
               <span class="text-danger">
                 {{ $errors->first('password') }}
               </span>
             </div>
             <div class="form-group">
-              <label for="">Konfirmasi Ulang Password : <span class="text-danger">*</span></label>
-              <input type="password" name="password_confirmation" id="password_confirmation" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid':'' }}" placeholder="Tulis Ulang Password..." required>
-              <span class="text-danger">
-                {{ $errors->first('password') }}
-              </span>
+              <label for="">Konfirmasi Ulang Password : </label>
+              <input type="password" name="password_confirmation" id="password_confirmation" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid':'' }}" placeholder="Tulis Ulang Password...">
             </div>
           </div>
           <div class="form-group col-12">
@@ -154,7 +151,7 @@
             <div class="row">
               <div class="col-md-3 col-lg-3 mt-1">
                 <button type="submit" class="btn btn-outline-primary btn-sm btn-block">
-                  <span class="fa fa-plus" style="padding-top: 4px;"></span> &ensp; Tambah Data
+                  <span class="fa fa-plus" style="padding-top: 4px;"></span> &ensp; Simpan Perubahan
                 </button>
               </div>
               <div class="col-md-3 col-lg-3 mt-1"> 
