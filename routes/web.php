@@ -18,5 +18,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'Administrator'], function () {
     Route::get('/', 'Backend\MainController@index')->name('admin.main');
-    Route::resource('user', 'Backend\UserController');
+    Route::resource('User', 'Backend\UserController');
 });

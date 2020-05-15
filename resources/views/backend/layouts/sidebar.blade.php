@@ -8,7 +8,7 @@
     <nav class="mt-4">
       <ul class="nav nav-pills nav-sidebar flex-column nav-compact nav-legacy text-sm" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-          <a href="#" class="nav-link active">
+          <a href="{{ route('admin.main') }}" class="nav-link {{ Request::is('Administrator') ? 'active':'' }}">
             <i class="nav-icon fa fa-home"></i>
             <p>
               Halaman Utama
@@ -19,7 +19,7 @@
           Administrator Menu
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{ route('User.index') }}" class="nav-link {{ Request::is('Administrator/User*') ? 'active':'' }}">
             <i class="nav-icon fa fa-user"></i>
             <p>
               Data User
