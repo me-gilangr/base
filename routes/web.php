@@ -16,7 +16,11 @@ Route::get('/', 'Frontend\MainController@index')->name('main');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['prefix' => 'Administrator'], function () {
-    Route::get('/', 'Backend\MainController@index')->name('admin.main');
-    Route::resource('User', 'Backend\UserController');
+Route::group(['middleware' => ['auth']], function () {
+    Route::group(['middleware' => ['role:Administrator']], function () {
+        Route::group(['prefix' => 'Administrator'], function () {
+            Route::get('/', 'Backend\MainController@index')->name('admin.main');
+            Route::resource('User', 'Backend\UserController');
+        });
+    });
 });

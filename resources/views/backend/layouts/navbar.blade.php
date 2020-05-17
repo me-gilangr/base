@@ -91,11 +91,11 @@
         <span class="dropdown-header">
           <div class="row">
             <div class="col-12 p-4">
-              <img src="{{ asset('backend') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" style="width: 100px;">
+              <img src="{{ auth()->user()->photo != null ? asset('images').'/users/'.auth()->user()->photo : asset('images/no-image.png') }}" class="img-circle elevation-2" alt="User Image" style="width: 100px;">
             </div>
             <div class="col-12">
               <h5>
-                Hi, USER !
+                Hi, {{ auth()->user()->name }} !
               </h5>
             </div>
           </div>
@@ -105,9 +105,12 @@
           <i class="float-left fa fa-cogs" style="padding-top: 5px;"></i> Ubah Data Diri
         </a>  
         <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item text-center">
+        <a href="{{ route('logout') }}" class="dropdown-item text-center" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
           <i class="float-left fa fa-sign-out-alt" style="padding-top: 5px;"></i> Logout
         </a>  
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          @csrf
+        </form>
         <div class="dropdown-divider"></div> 
         <div class="dropdown-item dropdown-footer">
         </div>
