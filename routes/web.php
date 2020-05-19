@@ -22,5 +22,18 @@ Route::group(['middleware' => ['auth']], function () {
             Route::get('/', 'Backend\MainController@index')->name('admin.main');
             Route::resource('User', 'Backend\UserController');
         });
+
+        Route::group(['prefix' => 'Restore'], function () {
+            Route::post('User', 'Backend\UserController@restore')->name('User.restore');
+        });
+
+        Route::group(['prefix' => 'Perma-Del'], function () {
+            Route::post('User', 'Backend\UserController@permanent')->name('User.permanent');
+        });
     });
+});
+
+
+Route::group(['prefix' => 'json'], function () {
+    Route::get('user/trashed', 'JsonController@trashedUser')->name('json.trashed.user');
 });
